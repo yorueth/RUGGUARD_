@@ -30,7 +30,7 @@ class Config:
     BOT_USERNAME = "projectruggaurd"
     TRIGGER_PHRASE = "riddle me this"
     TRUSTED_LIST_URL = "https://raw.githubusercontent.com/devsyrem/turst-list/main/list"
-    MIN_TRUSTED_FOLLOWERS = 3
+    MIN_TRUSTED_FOLLOWERS = 2
 
 config = Config()
 
