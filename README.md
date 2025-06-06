@@ -130,8 +130,3 @@ Step 4: Run the Bot
 Simply press the big green "Run" button at the top of the screen.
 Replit will automatically read your configuration files, install the dependencies from requirements.txt, and execute the run command from your .replit file.
 You should see the "Bot Listener is ready and listening..." message in the console.
-
-# ⚠️ Technical Note: Follower Checking Limitation
-The project scope includes checking if a target user is followed by accounts from the trusted list. Please be aware that the Free tier of the X API does not provide a direct endpoint to efficiently check the followers of an arbitrary user. This functionality requires access to the 'Basic' tier or higher.
-
-This bot's current implementation includes the necessary logic structure but will return 0 for the "vouched by" count due to this API limitation. This has been noted in the bot's reply to manage user expectations and demonstrate technical awareness.
