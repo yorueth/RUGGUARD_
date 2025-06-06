@@ -4,16 +4,21 @@ This is the official repository for the Project RUGGUARD X (Twitter) Bot, design
 This project was built using Python with the Tweepy library and is designed to be easily deployed on Replit.
 
 # ✨ Key Features
-On-Demand Analysis: Trigger the bot by replying to any tweet with @projectruggaurd riddle me this.
-Targeted Reporting: The bot correctly analyzes the author of the original tweet, not the user who triggered the bot.
-Comprehensive Metrics: Analysis includes account age, follower/following ratio, bio content, and verification status.
-Trusted Network Vouching: Checks if the target account is vouched for by a predefined list of trusted community members.
-Single-File Deployment: The entire application is contained in a single main.py file for ultimate ease of setup and deployment.
+On-Demand Analysis : Trigger the bot by replying to any tweet with @projectruggaurd riddle me this.
+
+Targeted Reporting : The bot correctly analyzes the author of the original tweet, not the user who triggered the bot.
+
+Comprehensive Metrics : Analysis includes account age, follower/following ratio, bio content, and verification status. 
+
+Trusted Network Vouching : Checks if the target account is vouched for by a predefined list of trusted community members.
+
+Single-File Deployment : The entire application is contained in a single main.py file for ultimate ease of setup and deployment.
 
 # 🏛️ Code Architecture & Structure
 For simplicity and ease of deployment, the entire bot's logic is contained within a single main.py file. However, the code is organized into distinct logical sections, each handling a specific responsibility. This maintains clarity and a modular-like design within the single script.
 
-The key logical sections within main.py are :
+The key logical sections within main.py are
+
 Configuration : This top section defines a Config class that loads all necessary settings and API keys from environment variables (.env file or Replit Secrets). This keeps all configurable parts in one place.
 
 Trusted List Handler : A set of functions responsible for fetching the list of trusted accounts from the project's GitHub repository. It includes a simple caching mechanism to improve performance and avoid excessive requests.
@@ -38,8 +43,6 @@ Save the code from the single file provided into a new file named main.py.
 3. Create the Dependencies File
 In the same directory as main.py, create a file named requirements.txt and add the following lines:
 
-Plaintext
-
 tweepy==4.14.0
 requests==2.31.0
 python-dotenv==1.0.1
@@ -48,6 +51,7 @@ Then, install these dependencies by running:
 Bash
 
 pip install -r requirements.txt
+
 4. API Key Configuration (Crucial)
 The bot requires 5 keys from your X Developer Portal to function. Never share these keys or commit them to a public repository.
 
@@ -63,14 +67,14 @@ In the project's root directory, create a new file named .env.
 
 Copy the format below into your .env file and paste your keys.
 
-Code snippet
-
 # .env file for local configuration
+
 X_API_KEY="YOUR_API_KEY_HERE"
 X_API_KEY_SECRET="YOUR_API_KEY_SECRET_HERE"
 X_ACCESS_TOKEN="YOUR_ACCESS_TOKEN_HERE"
 X_ACCESS_TOKEN_SECRET="YOUR_ACCESS_TOKEN_SECRET_HERE"
 X_BEARER_TOKEN="YOUR_BEARER_TOKEN_HERE"
+
 Replit Setup
 Replit provides a secure way to store these keys without using a .env file.
 
@@ -82,12 +86,12 @@ X_ACCESS_TOKEN = your_access_token
 X_ACCESS_TOKEN_SECRET = your_access_token_secret
 X_BEARER_TOKEN = your_bearer_token
 
-# ▶️ How to Run the Bot
-Once the setup and configuration are complete, running the bot is simple.
+# ▶️ How to Run the Bot ( Local ) 
 
-Open your terminal or the Replit shell.
+Open your terminal 
 Navigate to the directory containing main.py.
 Run the script:
+
 Bash
 
 python main.py
@@ -97,6 +101,35 @@ API v2 Client successfully initialized.
 Old filter rules have been deleted.
 New filter rule added: '@projectruggaurd riddle me this'
 Bot Listener is ready and listening...
+
+# ▶️ How to Run the Bot ( Replit ) 
+
+Step 1: Create a New Replit Workspace
+Go to Replit.com.
+Click the "+ Create Repl" button.
+In the template search box, type "Python" and select the official Python template.
+Give your Repl a name (e.g., "Project-RUGGUARD-Bot") and click "Create Repl".
+
+Step 2: Add the Project Files
+In your new Repl, you will see a file list on the left.
+main.py: Click on the default main.py file and replace its content by pasting the full code from above.
+.replit: Click the three dots at the top of the file list and select "Show hidden files". A .replit file will appear. Click on it and replace its content with the .replit code provided above.
+requirements.txt: Click the "+ Add file" button, name the file requirements.txt, and paste the three lines of dependencies into it.
+
+Step 3: Configure API Keys (Most Important Step)
+In the left sidebar, click the padlock icon to open the "Secrets" tool.
+You must add your 5 keys from the X Developer Portal here. Do not paste them into the code.
+Add a new secret for each key :
+Key: X_API_KEY, Value: your_key_here
+Key: X_API_KEY_SECRET, Value: your_secret_key_here
+Key: X_ACCESS_TOKEN, Value: your_access_token_here
+Key: X_ACCESS_TOKEN_SECRET, Value: your_secret_token_here
+Key: X_BEARER_TOKEN, Value: your_bearer_token_here
+
+Step 4: Run the Bot
+Simply press the big green "Run" button at the top of the screen.
+Replit will automatically read your configuration files, install the dependencies from requirements.txt, and execute the run command from your .replit file.
+You should see the "Bot Listener is ready and listening..." message in the console.
 
 # ⚠️ Technical Note: Follower Checking Limitation
 The project scope includes checking if a target user is followed by accounts from the trusted list. Please be aware that the Free tier of the X API does not provide a direct endpoint to efficiently check the followers of an arbitrary user. This functionality requires access to the 'Basic' tier or higher.
