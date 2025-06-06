@@ -91,7 +91,7 @@ Run the script:
 Bash
 
 python main.py
-If successful, you will see the following output in your console, and the bot is now actively listening for triggers on X:
+If successful, you will see the following output in your console, and the bot is now actively listening for triggers on X :
 Starting RUGGUARD Bot...
 API v2 Client successfully initialized.
 Old filter rules have been deleted.
