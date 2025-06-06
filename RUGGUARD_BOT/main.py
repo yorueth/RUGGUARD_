@@ -1,5 +1,3 @@
-# main.py - Project RUGGUARD All-in-One Bot
-
 import os
 import time
 import requests
